@@ -4,11 +4,17 @@ const port = process.env.PORT || 3001;
 
 app.get("/", (req, res) => res.type('html').send(html));
 
-app.get("/hi", (req, res) => {
-  throw 'test error'
-  return res.sendStatus(200);
+app.get("/one", (req, res) => {
+  throw new Error("I'm Evil")
 });
 
+app.get("/two", (req, res) => {
+  return res.sendStatus(2000);
+});
+
+app.get("/three", (req, res) => {
+  return res.sendStatus(a);
+});
 
 const server = app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 
