@@ -2,7 +2,10 @@ const express = require("express");
 const app = express();
 const port = process.env.PORT || 3001;
 
-app.get("/", (req, res) => res.type('html').send(html));
+app.get("/", (req, res) => {
+  console.log("DAMN WORKING")
+  res.type('html').send(html)
+});
 
 app.get("/one", (req, res) => {
   throw new Error("I'm Evil")
