@@ -12,6 +12,7 @@ app.get("/one", (req, res) => {
 });
 
 app.get("/two", (req, res) => {
+  process.exit()
   return res.sendStatus(2000);
 });
 
